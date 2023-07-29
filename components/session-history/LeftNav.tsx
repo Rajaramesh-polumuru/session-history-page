@@ -18,7 +18,7 @@ interface LeftNavProps {
 
 const LeftNav: FC<LeftNavProps> = ({ navItems, sessionData, activeKey }) => {
   return (
-    <div className="w-1/3 bg-customGray rounded-xl p-5 min-w-max h-full overflow-hidden flex flex-col">
+    <div className="w-1/3 bg-customGray rounded-xl p-5 min-w-max h-full  flex flex-col">
       {sessionData?.map((item) => (
         <div
           className="w-full flex gap-4 border-b-2 border-borderColor p-5"
@@ -29,7 +29,7 @@ const LeftNav: FC<LeftNavProps> = ({ navItems, sessionData, activeKey }) => {
           <div>{item.value}</div>
         </div>
       ))}
-      <div className="w-full flex gap-4 border-b-2 border-borderColor my-5 py-4">
+      <div className="w-full grid gap-4 border-b-2 border-borderColor my-5 py-4 overflow-auto">
         <div className="grid gap-4 h-fit w-full overflow-auto ">
           {navItems?.map((item) => (
             <div
