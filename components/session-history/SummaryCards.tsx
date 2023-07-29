@@ -4,18 +4,18 @@ import { FC } from "react";
 export interface QuickCardProps {
   data: Summary[];
 }
-const SummaryCards: FC<QuickCardProps> = ({ data }) => {
+
+const SummaryCards: FC<QuickCardProps> = ({ data = [] }) => {
   return (
-    <div className=" w-full h-fit">
-      <div className="w-full h-fit overflow-auto flex gap-4  py-4">
-        {data?.map((item, index) => (
+    <div className="w-full h-fit">
+      <div className="w-full h-fit overflow-auto flex gap-4 py-4">
+        {data.map((item) => (
           <div
-            className="border-2  border-borderColor rounded-xl  bg-cardBackground p-4 grid justify-between w-max h-32"
+            className="border-2 border-borderColor rounded-xl bg-cardBackground p-4 grid justify-between w-max h-32"
             key={item.title}
           >
-            <div className="w-fit h-fit flex gap-6 justify-between items-center text-sm ">
+            <div className="w-fit h-fit flex gap-6 justify-between items-center text-sm">
               <div className="text-textGray w-max">{item.title}</div>
-
               <div
                 className={`${
                   item.percentageChange < 0
