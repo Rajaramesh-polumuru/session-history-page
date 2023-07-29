@@ -1,7 +1,7 @@
 import { FC } from "react";
 import SessionActivityGraph from "./SessionActivityGraph";
 import SessionHistoryTable from "./SessionHistoryTable";
-import useMutateSessionHistoryData from "@/hooks/useMutateSessionHistoryData";
+import useMutateSessionHistoryData from "@/hooks/session-history/useMutateSessionHistoryData";
 import { SessionHistoryResponse } from "@/pages/api/v1/types";
 import SummaryCards from "./SummaryCards";
 
