@@ -1,9 +1,9 @@
 import React, { FC, useEffect } from "react";
 import Table from "@/components/Table";
-import { createColumnHelper } from "@tanstack/react-table";
+import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import moment from "moment";
 
-interface SessionHistory {
+export interface SessionHistory {
   startTime: string;
   date: string;
   duration: string;
@@ -42,7 +42,7 @@ const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
   }, [data]);
 
   const columnHelper = createColumnHelper<SessionHistory>();
-  const columns = [
+  const columns: ColumnDef<SessionHistory, string>[] = [
     columnHelper.accessor("startTime", {
       cell: (info) => info.getValue(),
       header: "Session start time",

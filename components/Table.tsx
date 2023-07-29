@@ -1,13 +1,19 @@
 import {
-  createColumnHelper,
+  ColumnDef,
   flexRender,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useState, useReducer, FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { SessionHistory } from "./session-history/SessionHistoryTable";
 
-const Table: FC<any> = ({ columns, defaultData }) => {
-  const [data, setData] = useState(() => [...defaultData]);
+interface TableProps {
+  columns: ColumnDef<SessionHistory, string>[];
+  defaultData: SessionHistory[];
+}
+
+const Table: FC<TableProps> = ({ columns, defaultData }) => {
+  const [data, setData] = useState<SessionHistory[]>([]);
 
   useEffect(() => {
     setData(defaultData);
@@ -18,7 +24,9 @@ const Table: FC<any> = ({ columns, defaultData }) => {
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+
   if (!table || !data) return null;
+
   return (
     <div className="w-full text-textGray">
       <table className="w-full">
@@ -77,4 +85,4 @@ const Table: FC<any> = ({ columns, defaultData }) => {
   );
 };
 
-export default Table;
+export default React.memo(Table);
