@@ -7,7 +7,7 @@ const Header = () => {
     <div className="flex align-middle justify-between w-full  px-6 py-4">
       <div className="flex align-middle justify-between w-full  p-5 border-b-2 border-borderColor ">
         <div className="flex gap-3 items-center">
-          <button className="border-none">
+          <button className="border-none cursor-pointer">
             <Image
               src={arrowLeftIcon}
               alt="arrow-left"
@@ -19,7 +19,9 @@ const Header = () => {
         </div>
         <div className="grid grid-cols-2 gap-4 items-center ">
           <div className="grid gap-4 border-r-2 border-slate-500 pr-5">
-            <div className="text-2xl font-bold w-max font-tomorrow">Node Moniker</div>
+            <div className="text-2xl font-bold w-max font-tomorrow">
+              Node Moniker
+            </div>
             <div className="text-md">sent1jqd5s...axu6c</div>
           </div>
           <button className="bg-customGreen hover:bg-customGreen text-white font-bold py-2 px-4 rounded h-fit w-full">
