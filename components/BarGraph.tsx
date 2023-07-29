@@ -47,9 +47,18 @@ const options = {
   scales: {
     x: {
       type: "category",
+      ticks: {
+        color: "#8A8A8A",
+      },
     },
     y: {
       type: "linear",
+      grid: {
+        color: "#1A202C",
+      },
+      ticks: {
+        color: "#8A8A8A",
+      },
     },
   },
   plugins: {
@@ -199,7 +208,7 @@ const BarGraph: FC<BarGraphProps> = ({ data }) => {
 
   return (
     <div>
-      <div className="p-4 flex gap-3 justify-end">
+      <div className="p-4 flex gap-3 justify-end h-fit">
         <button
           onClick={() => handleDataTypeChange("1D")}
           className={`${buttonClassName} ${
