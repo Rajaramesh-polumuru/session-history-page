@@ -15,11 +15,11 @@ const Header = () => {
               height={32}
             />
           </button>
-          <div className="text-xl font-bold ">Instance Name</div>
+          <div className="text-2xl font-bold font-tomorrow ">Instance Name</div>
         </div>
         <div className="grid grid-cols-2 gap-4 items-center ">
           <div className="grid gap-4 border-r-2 border-slate-500 pr-5">
-            <div className="text-xl font-bold w-max">Node Moniker</div>
+            <div className="text-2xl font-bold w-max font-tomorrow">Node Moniker</div>
             <div className="text-md">sent1jqd5s...axu6c</div>
           </div>
           <button className="bg-customGreen hover:bg-customGreen text-white font-bold py-2 px-4 rounded h-fit w-full">

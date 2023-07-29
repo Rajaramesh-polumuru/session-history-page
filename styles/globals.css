@@ -15,9 +15,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@font-face {
+  font-family: "SpaceGrotesk";
+  font-weight: 400;
+  src: url("") format("woff");
+}
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: "Montserrat", sans-serif;
   background: linear-gradient(
       to bottom,
       transparent,

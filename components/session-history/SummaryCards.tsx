@@ -24,7 +24,7 @@ const SummaryCards: FC<QuickCardProps> = ({ data }) => {
                 } w-max`}
               >{`${item.percentageChange}%`}</div>
             </div>
-            <div className="w-full text-xl ">{item.value}</div>
+            <div className="w-full text-xl font-tomorrow">{item.value}</div>
           </div>
         ))}
       </div>

@@ -8,7 +8,7 @@ interface ActivityGraphProps {
 const ActivityGraph: FC<ActivityGraphProps> = ({ data }) => {
   return (
     <div className="p-4 bg-cardBackground rounded-xl">
-      <div className="text-2xl">Session Activity</div>
+      <div className="text-2xl font-tomorrow">Session Activity</div>
       <BarGraph data={data} />
     </div>
   );
