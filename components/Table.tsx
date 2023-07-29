@@ -20,13 +20,16 @@ const Table: FC<any> = ({ columns, defaultData }) => {
   });
   if (!table || !data) return null;
   return (
-    <div className="w-full">
+    <div className="w-full text-textGray">
       <table className="w-full">
         <thead className="bg-customGray p-2">
           {table?.getHeaderGroups()?.map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup?.headers?.map((header) => (
-                <th key={header.id} className=" text-start p-4 text-sm">
+                <th
+                  key={header.id}
+                  className=" text-start p-4 text-sm text-headerText"
+                >
                   {header.isPlaceholder
                     ? null
                     : flexRender(

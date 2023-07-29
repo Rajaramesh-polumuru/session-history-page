@@ -19,11 +19,11 @@ const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
   const getBgColor = (nodeUsed: string) => {
     switch (nodeUsed) {
       case "Wiregaurd":
-        return "bg-wiregaurd";
+        return "bg-wiregaurd text-white";
       case "V2Ray":
-        return "bg-v2ray";
+        return "bg-v2ray text-white";
       case "OpenVPN":
-        return "text-openvpnText bg-openvpn";
+        return "text-openvpnText bg-openvpn ";
       default:
         return "";
     }
@@ -65,7 +65,7 @@ const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
         <div
           className={`${getBgColor(
             info.getValue()
-          )} p-2 rounded w-full flex justify-center`}
+          )} p-2 rounded w-full flex justify-center `}
         >
           {info.renderValue()}
         </div>

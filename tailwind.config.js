@@ -44,6 +44,7 @@ module.exports = {
         openvpnText: "#1F5EFF",
         openvpn: "#FFF",
         v2ray: "#7C99E2",
+        headerText: "#CBCBCB",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
