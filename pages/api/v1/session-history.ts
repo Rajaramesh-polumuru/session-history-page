@@ -170,7 +170,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       },
     ];
     const dummySummaryData: Summary[] = [
-      { title: "Active Sessions", percentageChange: +12.21, value: 2 },
+      { title: "Active Sessions", percentageChange: +12.21, value: "10H" },
       {
         title: "Total Sessions",
         percentageChange: -2.21,
