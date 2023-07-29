@@ -15,6 +15,7 @@ import Header from "@/components/session-history/Header";
 import LeftNav from "@/components/session-history/LeftNav";
 import MainContainer from "@/components/session-history/MainContainer";
 import useSessionHistory from "@/hooks/session-history/useSessionHistory";
+import LoadingMask from "@/components/LoadingMask";
 
 const SessionHistory = () => {
   const userId = 1;
@@ -83,7 +84,9 @@ const SessionHistory = () => {
           sessionData={sessionData}
           activeKey={activeKey}
         />
-        {data && <ContentContainer sessionHistoryResponse={data} />}
+        <LoadingMask isLoading={isLoading}>
+          {data && <ContentContainer sessionHistoryResponse={data} />}
+        </LoadingMask>
       </MainContainer>
     </div>
   );
