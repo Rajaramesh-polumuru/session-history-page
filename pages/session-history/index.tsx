@@ -1,12 +1,8 @@
-import ContentContainer from "@/components/session-history/ContentContainer";
-import Header from "@/components/session-history/Header";
-import LeftNav from "@/components/session-history/LeftNav";
-import MainContainer from "@/components/session-history/MainContainer";
 import React from "react";
-import backgroundImage from "@/public/assets/images/background.png";
 import { QueryClient } from "@tanstack/react-query";
-import useSessionHistory from "@/hooks/session-history/useSessionHistory";
 import Image from "next/image";
+
+import backgroundImage from "@/public/assets/images/background.png";
 import nodeOverviewIcon from "@/public/assets/left-nav-icons/node-overview.svg";
 import dvpnEarningsIcon from "@/public/assets/left-nav-icons/dvpn-earnings.svg";
 import sessionHistoryIcon from "@/public/assets/left-nav-icons/session-history.svg";
@@ -14,8 +10,13 @@ import subscriptionHistoryIcon from "@/public/assets/left-nav-icons/subscription
 import bandwidthUsageIcon from "@/public/assets/left-nav-icons/bandwidth-usage.svg";
 import editNodeConfigurationIcon from "@/public/assets/left-nav-icons/edit-node-configuration.svg";
 
+import ContentContainer from "@/components/session-history/ContentContainer";
+import Header from "@/components/session-history/Header";
+import LeftNav from "@/components/session-history/LeftNav";
+import MainContainer from "@/components/session-history/MainContainer";
+import useSessionHistory from "@/hooks/session-history/useSessionHistory";
+
 const SessionHistory = () => {
-  // For now, we'll just hardcode the userId
   const userId = 1;
   const queryClient = new QueryClient();
   const { data, isLoading, error } = useSessionHistory(userId);
@@ -52,7 +53,8 @@ const SessionHistory = () => {
       key: "edit-node-configuration",
     },
   ];
-  //should be fetched from the api
+
+  // Should be fetched from the API or external data source
   const sessionData = [
     {
       title: "IP Address",
@@ -64,10 +66,10 @@ const SessionHistory = () => {
     },
   ];
 
-  //should be dynamic
   const activeKey = "session-history";
+
   return (
-    <div className="h-screen flex w-screen  items-center flex-col">
+    <div className="h-screen flex w-screen items-center flex-col">
       <Image
         layout="fill"
         src={backgroundImage}
@@ -81,7 +83,7 @@ const SessionHistory = () => {
           sessionData={sessionData}
           activeKey={activeKey}
         />
-        <ContentContainer sessionHistoryResponse={data} />
+        {data && <ContentContainer sessionHistoryResponse={data} />}
       </MainContainer>
     </div>
   );
