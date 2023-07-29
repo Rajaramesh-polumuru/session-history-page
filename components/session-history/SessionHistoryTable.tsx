@@ -3,48 +3,45 @@ import Table from "@/components/Table";
 import { createColumnHelper } from "@tanstack/react-table";
 import moment from "moment";
 
-interface SessionHistoryTableProps {
-  data: any;
+interface SessionHistory {
+  startTime: string;
+  date: string;
+  duration: string;
+  nodeUsed: string;
+  dataConsumed: string;
+  location: string;
+  bgColor?: string;
 }
+
+interface SessionHistoryTableProps {
+  data: SessionHistory[];
+}
+
 const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
-  const [defaultData, setDefaultData] = React.useState<any>([]);
-  type Session = {
-    startTime: string;
-    date: string;
-    duration: string;
-    nodeUsed: string;
-    dataConsumed: string;
-    location: string;
-  };
-  const getBgColor = (nodeUsed: string) => {
-    switch (nodeUsed) {
-      case "Wiregaurd":
+  const [defaultData, setDefaultData] = React.useState<SessionHistory[]>([]);
+
+  const getBgColor = (nodeUsed: string): string => {
+    switch (nodeUsed.toLowerCase()) {
+      case "wiregaurd":
         return "bg-wiregaurd text-white";
-      case "V2Ray":
+      case "v2ray":
         return "bg-v2ray text-white";
-      case "OpenVPN":
-        return "text-openvpnText bg-openvpn ";
+      case "openvpn":
+        return "bg-openvpn text-openvpnText";
       default:
         return "";
     }
   };
 
   useEffect(() => {
-    let newData = data?.map((session: Session) => {
-      return {
-        startTime: session.startTime,
-        date: session.date,
-        duration: session.duration,
-        nodeUsed: session.nodeUsed,
-        dataConsumed: session.dataConsumed,
-        location: session.location,
-        bgColor: getBgColor(session.nodeUsed),
-      };
-    });
-    setDefaultData(newData);
+    const newData = data?.map((session) => ({
+      ...session,
+      bgColor: getBgColor(session.nodeUsed),
+    }));
+    setDefaultData(newData || []);
   }, [data]);
 
-  const columnHelper = createColumnHelper<Session>();
+  const columnHelper = createColumnHelper<SessionHistory>();
   const columns = [
     columnHelper.accessor("startTime", {
       cell: (info) => info.getValue(),
@@ -63,9 +60,7 @@ const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
       header: "Node Used",
       cell: (info) => (
         <div
-          className={`${getBgColor(
-            info.getValue()
-          )} p-2 rounded w-full flex justify-center `}
+          className={`${info.row.original.bgColor} p-2 rounded w-full flex justify-center`}
         >
           {info.renderValue()}
         </div>
@@ -80,9 +75,10 @@ const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
       cell: (info) => info.renderValue(),
     }),
   ];
+
   return (
-    <div className=" bg-cardBackground rounded-xl h-fit">
-      <div className="p-4 text-2xl font-tomorrow ">Session History</div>
+    <div className="bg-cardBackground rounded-xl">
+      <div className="p-4 text-2xl font-tomorrow">Session History</div>
       <Table columns={columns} defaultData={defaultData} />
     </div>
   );
