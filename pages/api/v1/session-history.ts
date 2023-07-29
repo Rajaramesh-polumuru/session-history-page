@@ -17,6 +17,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       },
       {
         userId,
+        startTime: "11:00:00",
+        date: "2023-07-29",
+        duration: "0.234 sec",
+        nodeUsed: "Wiregaurd",
+        dataConsumed: "0.15 MB",
+        location: "New York",
+      },
+      {
+        userId,
         startTime: "14:30:00",
         date: "2023-07-30",
         duration: "0.123 sec",
@@ -27,7 +36,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "11:15:00",
-        date: "2023-07-31",
+        date: "2023-07-21",
         duration: "1.567 sec",
         nodeUsed: "OpenVPN",
         dataConsumed: "0.25 MB",
@@ -36,7 +45,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "15:45:00",
-        date: "2023-08-01",
+        date: "2023-06-01",
         duration: "0.876 sec",
         nodeUsed: "Wiregaurd",
         dataConsumed: "0.18 MB",
@@ -45,7 +54,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "10:00:00",
-        date: "2023-08-02",
+        date: "2023-06-02",
         duration: "2.345 sec",
         nodeUsed: "V2Ray",
         dataConsumed: "0.12 MB",
@@ -54,7 +63,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "09:30:00",
-        date: "2023-08-03",
+        date: "2023-04-03",
         duration: "0.456 sec",
         nodeUsed: "OpenVPN",
         dataConsumed: "0.09 MB",
@@ -63,7 +72,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "16:00:00",
-        date: "2023-08-04",
+        date: "2023-04-04",
         duration: "1.234 sec",
         nodeUsed: "Wiregaurd",
         dataConsumed: "0.22 MB",
@@ -72,7 +81,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "13:45:00",
-        date: "2023-08-05",
+        date: "2023-03-05",
         duration: "0.789 sec",
         nodeUsed: "V2Ray",
         dataConsumed: "0.14 MB",
@@ -81,7 +90,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "10:30:00",
-        date: "2023-08-06",
+        date: "2023-02-06",
         duration: "1.876 sec",
         nodeUsed: "OpenVPN",
         dataConsumed: "0.21 MB",
@@ -90,7 +99,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "17:15:00",
-        date: "2023-08-07",
+        date: "2022-07-07",
         duration: "2.345 sec",
         nodeUsed: "Wiregaurd",
         dataConsumed: "0.13 MB",
@@ -99,7 +108,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "14:00:00",
-        date: "2023-08-08",
+        date: "2022-08-08",
         duration: "0.987 sec",
         nodeUsed: "V2Ray",
         dataConsumed: "0.17 MB",
@@ -108,7 +117,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "11:45:00",
-        date: "2023-08-09",
+        date: "2022-04-09",
         duration: "1.456 sec",
         nodeUsed: "OpenVPN",
         dataConsumed: "0.28 MB",
@@ -117,7 +126,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "18:30:00",
-        date: "2023-08-10",
+        date: "2023-03-10",
         duration: "0.654 sec",
         nodeUsed: "Wiregaurd",
         dataConsumed: "0.10 MB",
@@ -126,7 +135,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "14:45:00",
-        date: "2023-08-11",
+        date: "2023-02-11",
         duration: "2.123 sec",
         nodeUsed: "V2Ray",
         dataConsumed: "0.19 MB",
@@ -135,7 +144,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "12:30:00",
-        date: "2023-08-12",
+        date: "2023-01-12",
         duration: "1.234 sec",
         nodeUsed: "OpenVPN",
         dataConsumed: "0.11 MB",
@@ -144,7 +153,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "19:15:00",
-        date: "2023-08-13",
+        date: "2023-04-13",
         duration: "0.543 sec",
         nodeUsed: "Wiregaurd",
         dataConsumed: "0.08 MB",
@@ -153,7 +162,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         userId,
         startTime: "15:30:00",
-        date: "2023-08-14",
+        date: "2023-06-14",
         duration: "2.098 sec",
         nodeUsed: "V2Ray",
         dataConsumed: "0.15 MB",
