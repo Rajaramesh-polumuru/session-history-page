@@ -12,7 +12,8 @@ export default function useMutateSessionHistoryData(
     const newActivityGraphData = sessionHistory?.map((session) => {
       return {
         date: session.date,
-        duration: session.duration,
+        duration: Number(session.duration.split(" ")[0] ?? 0),
+        startTime: session.startTime, 
       };
     });
     setActivityGraphData(newActivityGraphData);

@@ -5,11 +5,11 @@ interface ActivityGraphProps {
   data: any;
 }
 
-const ActivityGraph: FC<ActivityGraphProps> = () => {
+const ActivityGraph: FC<ActivityGraphProps> = ({ data }) => {
   return (
     <div className="p-4 bg-cardBackground rounded-xl">
       <div className="text-2xl">Session Activity</div>
-      <BarGraph />
+      <BarGraph data={data} />
     </div>
   );
 };
