@@ -10,7 +10,7 @@ const SummaryCards: FC<QuickCardProps> = ({ data }) => {
       <div className="w-full h-fit overflow-auto flex gap-4  py-4">
         {data?.map((item, index) => (
           <div
-            className="border-2  border-borderColor rounded-xl  bg-cardBackground p-4 grid justify-between w-max h-fit"
+            className="border-2  border-borderColor rounded-xl  bg-cardBackground p-4 grid justify-between w-max h-32"
             key={item.title}
           >
             <div className="w-fit h-fit flex gap-6 justify-between items-center text-sm ">
