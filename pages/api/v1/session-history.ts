@@ -202,7 +202,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   } catch (error) {
     res.status(500).json({
       error: "Failed to retrieve session history data.",
-      message: error,
     });
   }
 }

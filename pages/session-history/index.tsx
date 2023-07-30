@@ -19,7 +19,7 @@ import LoadingMask from "@/components/LoadingMask";
 
 const SessionHistory = () => {
   const userId = 1;
-  const queryClient = new QueryClient();
+
   const { data, isLoading, error } = useSessionHistory(userId);
 
   const NavItemsList = [
@@ -84,7 +84,7 @@ const SessionHistory = () => {
           sessionData={sessionData}
           activeKey={activeKey}
         />
-        <LoadingMask isLoading={isLoading}>
+        <LoadingMask isLoading={isLoading || !!error}>
           {data && <ContentContainer sessionHistoryResponse={data} />}
         </LoadingMask>
       </MainContainer>
