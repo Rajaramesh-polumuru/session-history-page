@@ -77,7 +77,7 @@ const SessionHistoryTable: FC<SessionHistoryTableProps> = ({ data }) => {
   ];
 
   return (
-    <div className="bg-cardBackground rounded-xl">
+    <div className="bg-cardBackground rounded-xl min-w-max">
       <div className="p-4 text-2xl font-tomorrow">Session History</div>
       <Table columns={columns} defaultData={defaultData} />
     </div>
